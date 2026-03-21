@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookNest</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-inner">
+            <div class="logo">📚 Book<em>Nest</em></div>
+            <div class="header-right">
+                <nav>
+                    <button class="nav-btn active" data-tab="discover">Discover</button>
+                    <button class="nav-btn" data-tab="favorites">
+                        Favorites <span class="badge" id="fav-badge">0</span>
+                    </button>
+                    <button class="nav-btn" data-tab="readlist">
+                        Reading List <span class="badge" id="read-badge">0</span>
+                    </button>
+                </nav>
+                <button id="theme-toggle" title="Toggle dark mode">🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- DISCOVER TAB -->
+    <div id="tab-discover">
+
+        <section class="search-section">
+            <div class="hero-inner">
+                <span class="hero-eyebrow">✦ Smart Book Discovery</span>
+                <h1>Find your next <em>great read.</em></h1>
+                <p>Search by title, author, or genre</p>
+
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="e.g. Harry Potter, Stephen King, fantasy..." />
+                    <button id="search-btn">Search</button>
+                </div>
+
+                <div class="filter-row">
+                    <button class="chip active" data-type="q">All</button>
+                    <button class="chip" data-type="title">Title</button>
+                    <button class="chip" data-type="author">Author</button>
+                    <button class="chip" data-type="subject">Genre</button>
+                </div>
+            </div>
+        </section>
+
+        <main class="container">
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Searching books...</p>
+            </div>
+            <p id="status" class="status hidden"></p>
+            <div id="results" class="grid"></div>
+        </main>
+
+    </div>
+
+    <!-- FAVORITES TAB -->
+    <div id="tab-favorites" class="hidden">
+        <div class="container">
+            <h2 class="tab-title">Your Favorites</h2>
+            <div id="fav-grid" class="grid"></div>
+            <div id="fav-empty" class="empty-state">
+                <span>🌟</span>
+                <p>No favorites yet.<br>Tap ♡ on any book to save it here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- READING LIST TAB -->
+    <div id="tab-readlist" class="hidden">
+        <div class="container">
+            <h2 class="tab-title">Reading List</h2>
+            <div id="read-grid" class="grid"></div>
+            <div id="read-empty" class="empty-state">
+                <span>📖</span>
+                <p>Nothing here yet.<br>Tap 🔖 on any book to add it.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal-overlay" class="hidden">
+        <div id="modal">
+            <button id="modal-close">✕</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
