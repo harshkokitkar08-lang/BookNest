@@ -1,104 +1,60 @@
 # BookNest
 
-BookNest is a smart book discovery and reading tracker web application built using HTML, CSS, and JavaScript. It helps users search for books, explore book details, sort and filter results, save favorites, and track their reading progress through a clean and responsive interface.
+BookNest ek simple web app hai jisme aap books **search** kar sakte ho, details dekh sakte ho, aur apni **Favorites** + **Want to Read** list manage kar sakte ho.
 
-# Project Purpose
+### Tech Stack
 
-The purpose of this project is to build a practical and user-friendly web app that demonstrates:
+- **HTML** (structure)
+- **CSS** (UI + responsive + dark mode)
+- **JavaScript (ES6)** (logic + DOM + fetch)
+- **LocalStorage** (favorites / reading list save karne ke liye)
 
-JavaScript fundamentals
+### API / Data Source (konsa API use hua hai)
 
-API integration using fetch
+Is project me **Open Library** ka public API use hua hai.
 
-Array higher-order functions for searching, filtering, and sorting
+- **Search API** (title/author/general search)
+  - `https://openlibrary.org/search.json?...`
+- **Subjects API** (genre/subject ke through browse)
+  - `https://openlibrary.org/subjects/<subject>.json`
+- **Works API** (book description/details ke liye)
+  - `https://openlibrary.org/works/<workId>.json`
+- **Covers API** (book cover images)
+  - `https://covers.openlibrary.org/b/id/<coverId>-M.jpg`
+  - `https://covers.openlibrary.org/b/id/<coverId>-L.jpg`
 
-Responsive UI design with CSS
+### Features
 
-Clean and modular frontend development
+- **Search**: title / author / normal search, aur subject (genre) browse
+- **Book cards**: cover, title, author, year
+- **Book details modal**: basic info + description (Works API se)
+- **Favorites** aur **Want to Read** list (LocalStorage me save hota hai)
+- **Dark / Light mode**
+- **Loading + empty + error state**
 
-API Used
+### Project Structure
 
-This project uses the Open Library API to fetch book data.
-
-Planned Features
-
-Search books by title or author
-
-Display book cards with cover image, title, author, and publish year
-
-Sort books by title and publish year
-
-Filter books based on relevant criteria
-
-View more details about a selected book
-
-Save favorite books using localStorage
-
-Track reading goals or marked books
-
-Responsive design for mobile, tablet, and desktop
-
-Loading, empty, and error states
-
-Dark mode / light mode toggle
-
-# Technologies Used
-
-HTML5
-
-CSS3
-
-JavaScript (ES6)
-
-Open Library API
-
-Local Storage
-
-# Project Structure
-
+```
 BookNest/
-│── index.html
-│── style.css
-│── script.js
-│── README.md
+├─ index.html
+├─ style.css
+├─ script.js
+└─ README.md
+```
 
+### How to Run
 
-# How to Run the Project
+- Repo download/clone karo
+- Folder open karo
+- `index.html` ko browser me open karo
 
-Clone this repository
+### Future Improvements (optional)
 
-Open the project folder
+- Debounced search
+- Pagination / Load more
+- More filters
+- UI polish / animations
 
-Run the index.html file in your browser
+### Author
 
-Future Improvements
-
-Debounced search
-
-Pagination or load more functionality
-
-Advanced filters
-
-Better book detail view
-
-Improved animations and UI polish
-
-# Learning Outcomes
-
-Through this project, I aim to improve my understanding of:
-
-Working with real-time API data
-
-DOM manipulation
-
-Event handling
-
-Array methods like map(), filter(), find(), and sort()
-
-Building responsive and interactive user interfaces
-
-# Status
-
-This project is currently under development as part of a graded individual project.
-
-Author: Harsh Kokitkar
+Harsh Kokitkar
